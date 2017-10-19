@@ -11,11 +11,12 @@ public class Square {
 
     /**
      * Creats a Square with all required paramters.
-     * @exception InvalidSquareException for invalid rank or file
+     * @throws InvalidSquareException if rank or file is invalid
      * @param file the file in which the square presides
      * @param rank the rank in which the square presides
+     * @see InvalidSquareException
      */
-    public Square(char file, char rank) throws InvalidSquareException{
+    public Square(char file, char rank) throws InvalidSquareException {
         if (!validFile(file) || !validRank(rank)) {
             throw new InvalidSquareException(file, rank);
         } else {
@@ -41,8 +42,9 @@ public class Square {
 
     /**
     * Creates a Square with a rank and file with all required parameters.
-    * @exception throws InvalidSquareException for invalid rank and file
+    * @throws InvalidSquareException if rank or file is invalid
     * @param name the name of the square written as file and rank
+    * @see InvalidSquareException
     */
     public Square(String name) throws InvalidSquareException {
         this(name.charAt(0) , name.charAt(1));
@@ -50,7 +52,7 @@ public class Square {
 
     /**
      * Checks to see if file is between 'a' and 'h'
-     * @param file
+     * @param file the file in which the square presides
      * @return true if file is between 'a' and 'h', and false
      * otherwise
      */
@@ -66,7 +68,7 @@ public class Square {
 
     /**
      * Checks to see if rank is between '1' and '8'
-     * @param rank
+     * @param rank the rank in which the square presides
      * @return true if rank is between '1' and '8' and false
      * otherwise
      */
@@ -110,6 +112,13 @@ public class Square {
         }
         Square that = (Square) other;
         return this.name.equals(that.name);
+    }
+
+    @Override
+
+
+    public int hashCode() {
+        return super.hashCode();
     }
 }
 
