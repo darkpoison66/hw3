@@ -47,7 +47,13 @@ public class Square {
     * @see InvalidSquareException
     */
     public Square(String name) throws InvalidSquareException {
-        this(name.charAt(0) , name.charAt(1));
+        if (name.length() != 2) {
+            throw new InvalidSquareException(name);
+        } else {
+            this.file = name.charAt(0);
+            this.rank = name.charAt(1);
+            this.name = name;
+        }
     }
 
     /**

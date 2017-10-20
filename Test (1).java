@@ -1,12 +1,12 @@
 public class Test {
     public static void main(String[] args) throws InvalidSquareException {
         try {
-            Square hmm = new Square("a9");
+            Square hmm = new Square("a1");
         } catch (InvalidSquareException e) {
             System.out.println("InvalidSquareexception for valid square: " + e.getMessage());
         }
         try {
-            String invalidSquare = "h0";
+            String invalidSquare = "ihh";
             Square hm = new Square(invalidSquare);
         } catch (InvalidSquareException e) {
             System.out.println("InvalidSquareException for invalid square: " + e.getMessage());

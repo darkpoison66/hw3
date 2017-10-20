@@ -1,6 +1,11 @@
 /**
+<<<<<<< HEAD
+ * Represents an exception made when an invalid Square of invalid rank, invalid
+ * file, or invalid name is created. I chose to make my exception a
+=======
  * Represents an exception made when an invalid Square of invalid rank or
  * file is created. I chose to make my exception a
+>>>>>>> e5a21612bbfc32e11bdad1021da387dc464a5480
  * checked exception since a square can't be
  * changed to be made a valid square during runtime.
  * Before any methods can be called,
@@ -17,6 +22,7 @@
  */
 public class InvalidSquareException extends Exception {
     private char file, rank;
+    private String name;
 
     /**
      * Creates InvalidSquareException with all the required paramaters
@@ -27,13 +33,23 @@ public class InvalidSquareException extends Exception {
     public InvalidSquareException(char file, char rank) {
         this.file = file;
         this.rank = rank;
+        this.name = file + "" + rank;
+    }
+
+    /**
+     * Creates InvalidSquareException with all the required paramters
+     * @param name name of the invalid Square
+     * @see Square
+     */
+    public InvalidSquareException(String name) {
+        this.name = name;
     }
 
     /**
      * @return the invalid Square as a String message
      */
     public String getMessage() {
-        return file + "" + rank;
+        return name;
     }
 
 
