@@ -50,8 +50,7 @@ public class Square {
     public Square(String name) throws InvalidSquareException {
         if (name.length() != 2) {
             throw  new InvalidSquareException(name);
-        } else if (!validFile(name.charAt(0))
-        || !validRank(name.charAt(1))) {
+        } else if (!validFile(name.charAt(0)) || !validRank(name.charAt(1))) {
             throw new InvalidSquareException(name);
         } else {
             this.file = name.charAt(0);
