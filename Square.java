@@ -18,7 +18,8 @@ public class Square {
      */
     public Square(char file, char rank) throws InvalidSquareException {
         if (!validFile(file) || !validRank(rank)) {
-            throw new InvalidSquareException(file, rank);
+            String message = file + "" + name;
+            throw new InvalidSquareException(message);
         } else {
             this.file = file;
             this.rank = rank;
@@ -48,6 +49,9 @@ public class Square {
     */
     public Square(String name) throws InvalidSquareException {
         if (name.length() != 2) {
+            throw  new InvalidSquareException(name);
+        } else if (!validFile(name.charAt(0))
+        || !validRank(name.charAt(1))) {
             throw new InvalidSquareException(name);
         } else {
             this.file = name.charAt(0);

@@ -18,35 +18,14 @@
  * @author mabdi3
  */
 public class InvalidSquareException extends Exception {
-    private char file, rank;
-    private String name;
+    private String message;
 
     /**
      * Creates InvalidSquareException with all the required paramaters
-     * @param file file of the invalid Square
-     * @param rank rank of the invalid Square
-     * @see Square
+     * @param message the invalid square as a String
      */
-    public InvalidSquareException(char file, char rank) {
-        this.file = file;
-        this.rank = rank;
-        this.name = file + "" + rank;
-    }
-
-    /**
-     * Creates InvalidSquareException with all the required paramters
-     * @param name name of the invalid Square
-     * @see Square
-     */
-    public InvalidSquareException(String name) {
-        this.name = name;
-    }
-
-    /**
-     * @return the invalid Square as a String message
-     */
-    public String getMessage() {
-        return name;
+    public InvalidSquareException(String message) {
+        super(message);
     }
 
 

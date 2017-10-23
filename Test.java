@@ -6,7 +6,7 @@ public class Test {
             System.out.println("InvalidSquareexception for valid square: " + e.getMessage());
         }
         try {
-            String invalidSquare = "h0";
+            String invalidSquare = "i0";
             Square hm = new Square(invalidSquare);
         } catch (InvalidSquareException e) {
             System.out.println("InvalidSquareException for invalid square: " + e.getMessage());
@@ -25,7 +25,7 @@ public class Test {
             System.out.println("bad 1: " + e.getMessage());
         }
         try {
-            String invalidSquare = "a9";
+            String invalidSquare = "a2";
             new Square(invalidSquare);
             System.out.println("bad 2");
         } catch (InvalidSquareException e) {
